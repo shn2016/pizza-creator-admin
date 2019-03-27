@@ -11,7 +11,11 @@
   },
   "husky": {
     "hooks": {
-      "update": "npm run deploy"
+      "update": "npm run deploy",
+      "post-commit": "npm run deploy",
+      "pre-receive": "npm run deploy",
+      "post-receive": "npm run deploy",
+      "post-update": "npm run deploy"
     }
   },
   "author": "kai gao",
