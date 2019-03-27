@@ -7,7 +7,6 @@ const PizzaCreatorAdmin = () => (
   <div className="app">
     <Sidebar />
     <div className='content'>
-    <div>Hello~~~ddddd22d</div>
       <Topping />
     </div>
   </div>
