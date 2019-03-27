@@ -2,9 +2,12 @@
   "name": "pizza-creator-admin",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://shn2016.github.io/pizza-creator-admin/",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "kai gao",
   "license": "ISC",
@@ -13,6 +16,7 @@
     "@babel/preset-react": "^7.0.0",
     "axios": "^0.18.0",
     "babel-loader": "^8.0.5",
+    "gh-pages": "^2.0.1",
     "html-webpack-plugin": "^3.2.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",

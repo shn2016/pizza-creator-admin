@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/index.js',
   mode:'development',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
     // to find the dist in the current path = ./dist
     filename: 'bundle.js'
   },
