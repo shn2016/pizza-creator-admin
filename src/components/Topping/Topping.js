@@ -15,7 +15,7 @@ class Topping extends React.Component {
   
 
   componentDidMount() {
-    fetch('http://localhost:3000/product')
+    fetch('https://pizza-admin-api.herokuapp.com/product')
       .then((response) => response.json())
       .then((product) => {
         const toppings = product.map(product => {
