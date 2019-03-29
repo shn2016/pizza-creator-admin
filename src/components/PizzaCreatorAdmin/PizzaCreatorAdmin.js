@@ -22,24 +22,17 @@ const PizzaCreatorAdmin = () => (
       <Switch>
         <Route
           exact
-          path="/"
-          render = {() => (
-            <div>Hello World</div>
-          )}
-        />
-        <Route
-          exact
-          path="/topping"
+          path="/pizza-creator-admin/topping"
           component={Topping}
         />
         <Route
           exact
-          path="/size"
+          path="/pizza-creator-admin/size"
           component={Size}
         />
         <Route
           render = {() => (
-              <div><strong>404 Page Not found</strong></div>
+            <Topping />
           )}
         />
       </Switch>

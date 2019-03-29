@@ -39,6 +39,11 @@ npm start
 3. As an admin, I would like to add new pizza Size (name, price and inch);
 4. As an user, I would like to see all of available sizes and able to see the price on selected 
 
+## Thinking
+
+1. As the nature of react router(subpage is not real page), so it might has issues when using github issues. For example, refresh might not get the page.
+  * For this, I altered the path in Link, to make it match github pages;
+2. The SPA will call the api it change the page, when is costy. I assume it should be a cacheManager to manage it.
 
 ## About Me
 

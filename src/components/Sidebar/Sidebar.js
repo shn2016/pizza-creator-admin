@@ -43,9 +43,9 @@ const Sidebar = () => (
       <H1>Pizza Creator Admin</H1>
     </Brand>
     <Menu>
-      <Link to="/">Home</Link>
-      <Link to="/topping">Topping</Link>
-      <Link exact activeClassName='active' to="/size">Size</Link>
+      <Link to="/pizza-creator-admin/">Home</Link>
+      <Link to="/pizza-creator-admin/topping">Topping</Link>
+      <Link exact activeClassName='active' to="/pizza-creator-admin/size">Size</Link>
     </Menu>
   </Side>
 );
