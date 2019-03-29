@@ -15,7 +15,11 @@ const Content = styled.div`
   padding: 2rem 2rem 2rem 4rem;
 `;
 
-const PizzaCreatorAdmin = () => (
+const PizzaCreatorAdmin = ({basename}) => {
+  console.log(process.env.PUBLIC_UR);
+  console.log(basename);
+
+  return (
   <App>
     <Sidebar />
     <Content>
@@ -43,6 +47,6 @@ const PizzaCreatorAdmin = () => (
       </Switch>
     </Content>
   </App>
-);
+);}
 
 export default PizzaCreatorAdmin;
