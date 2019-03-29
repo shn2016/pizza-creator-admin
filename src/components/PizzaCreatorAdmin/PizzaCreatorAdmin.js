@@ -22,17 +22,17 @@ const PizzaCreatorAdmin = () => (
       <Switch>
       <Route
           exact
-          path="/"
+          path={process.env.PUBLIC_URL+"/"} 
           component={Topping}
         />
         <Route
           exact
-          path="/topping"
+          path={process.env.PUBLIC_URL+"/topping"} 
           component={Topping}
         />
         <Route
           exact
-          path="/size"
+          path={process.env.PUBLIC_URL+"/size"} 
           component={Size}
         />
         <Route
