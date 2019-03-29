@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 const Side = styled.div`
   --padding: 1rem 2rem;
@@ -21,13 +22,18 @@ const Menu = styled.div`
 const H1 = styled.h1`
   font-size: 1.5rem;
 `
-
-const A = styled.a`
+const Link = styled(NavLink).attrs({
+  exact:true,
+  activeClassName: 'active',
+})`
+  text-decoration: none;
   padding: 0.5rem 0;
   color: rgba(255, 255, 255, 0.5);
-
-  :active {
-    color: rgba(255, 255, 255, 1);
+  &.active {
+    color: white;
+  }
+  :hover {
+    color: white;
   }
 `
 
@@ -37,8 +43,9 @@ const Sidebar = () => (
       <H1>Pizza Creator Admin</H1>
     </Brand>
     <Menu>
-      <A active="true">Topping</A>
-      <A>Size</A>
+      <Link to="/">Home</Link>
+      <Link to="/topping">Topping</Link>
+      <Link exact activeClassName='active' to="/size">Size</Link>
     </Menu>
   </Side>
 );

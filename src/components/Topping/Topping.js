@@ -13,18 +13,22 @@ class Topping extends React.Component {
     this.onNewToppingAdded = this.onNewToppingAdded.bind(this);
   }
   
-
+  //TODO: create cache to avoid calling everytime
   componentDidMount() {
     fetch('https://pizza-admin-api.herokuapp.com/product')
       .then((response) => response.json())
       .then((product) => {
-        const toppings = product.map(product => {
+        const toppings = product.filter(product => {
           if(product.type === "toppings") return product;
         })
         this.setState({
           toppings,
         });
       });
+  }
+
+  componentWillUnmount() {
+    console.log("Topping Unmount")
   }
 
   onNewToppingAdded(topping) {

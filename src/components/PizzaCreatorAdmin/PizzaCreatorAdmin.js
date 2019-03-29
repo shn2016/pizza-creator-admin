@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Route, Switch } from 'react-router-dom';
 import Sidebar from '../Sidebar';
 import Topping from '../Topping';
+import Size from '../Size';
 
 const App = styled.div`
   display: grid;
@@ -17,7 +19,30 @@ const PizzaCreatorAdmin = () => (
   <App>
     <Sidebar />
     <Content>
-      <Topping />
+      <Switch>
+        <Route
+          exact
+          path="/"
+          render = {() => (
+            <div>Hello World</div>
+          )}
+        />
+        <Route
+          exact
+          path="/topping"
+          component={Topping}
+        />
+        <Route
+          exact
+          path="/size"
+          component={Size}
+        />
+        <Route
+          render = {() => (
+              <div><strong>404 Page Not found</strong></div>
+          )}
+        />
+      </Switch>
     </Content>
   </App>
 );
