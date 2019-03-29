@@ -6,7 +6,7 @@ import "./main.css"
 
 ReactDOM.render(
   (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <PizzaCreatorAdmin />
     </BrowserRouter>
   ),

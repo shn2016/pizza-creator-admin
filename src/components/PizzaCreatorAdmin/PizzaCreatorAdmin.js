@@ -20,19 +20,24 @@ const PizzaCreatorAdmin = () => (
     <Sidebar />
     <Content>
       <Switch>
-        <Route
+      <Route
           exact
-          path="/pizza-creator-admin/topping"
+          path="/"
           component={Topping}
         />
         <Route
           exact
-          path="/pizza-creator-admin/size"
+          path="/topping"
+          component={Topping}
+        />
+        <Route
+          exact
+          path="/size"
           component={Size}
         />
         <Route
           render = {() => (
-            <Topping />
+            <div>Error, this page cannot be found</div>
           )}
         />
       </Switch>
