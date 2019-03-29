@@ -15,11 +15,7 @@ const Content = styled.div`
   padding: 2rem 2rem 2rem 4rem;
 `;
 
-const PizzaCreatorAdmin = ({basename}) => {
-  console.log(process.env.PUBLIC_UR);
-  console.log(basename);
-
-  return (
+const PizzaCreatorAdmin = () => (
   <App>
     <Sidebar />
     <Content>
@@ -41,12 +37,12 @@ const PizzaCreatorAdmin = ({basename}) => {
         />
         <Route
           render = {() => (
-            <div>Error, this page cannot be found</div>
+           <Topping />
           )}
         />
       </Switch>
     </Content>
   </App>
-);}
+);
 
 export default PizzaCreatorAdmin;
