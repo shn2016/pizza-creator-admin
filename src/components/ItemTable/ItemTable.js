@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Card, { H2 } from '../Card';
 import Button from '../Button';
 
 const Table = styled.table`
@@ -9,7 +8,8 @@ const Table = styled.table`
   text-align: left;
   border-radius: 4px 4px 0 0;
   border-collapse: collapse;
-`
+`;
+
 const Th = styled.th`
   padding: var(--padding);
   color: rgba(0,0,0,.85);
@@ -17,13 +17,13 @@ const Th = styled.th`
   text-align: left;
   background: #fafafa;
   border-bottom: 1px solid #e8e8e8;
-`
+`;
+
 const Td = styled.td`
   padding: var(--padding); 
   border-bottom: 1px solid #e8e8e8;
-`
+`;
  
-
 const TableTdImg = styled.img`
   width: 50px;
   height: 50px;

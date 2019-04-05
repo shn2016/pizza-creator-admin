@@ -20,7 +20,7 @@ const PizzaCreatorAdmin = () => (
     <Sidebar />
     <Content>
       <Switch>
-      <Route
+        <Route
           exact
           path="/"
           component={Topping}
