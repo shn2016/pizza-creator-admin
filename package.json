@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --port $PORT --host 0.0.0.0",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
