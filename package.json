@@ -2,11 +2,17 @@
   "name": "pizza-creator-admin",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://shn2016.github.io/pizza-creator-admin/",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server --port $PORT --host 0.0.0.0",
+    "start": "webpack-dev-server --host 0.0.0.0",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
+  },
+  "husky": {
+    "hooks": {
+      "post-commit": "npm run deploy"
+    }
   },
   "author": "kai gao",
   "license": "ISC",

@@ -1,6 +1,8 @@
 import React from 'react';
-import ToppingsTable from '../ToppingsTable';
-import AddNewTopping from '../AddNewTopping';
+import axios from 'axios';
+import ItemTable from '../ItemTable';
+import Card, { H2 } from '../Card';
+import AddNewItemForm from '../AddNewItemForm/AddNewItemForm';
 
 class Topping extends React.Component {
   constructor(props) {
@@ -11,6 +13,7 @@ class Topping extends React.Component {
     };
 
     this.onNewToppingAdded = this.onNewToppingAdded.bind(this);
+    this.onToppingDelete = this.onToppingDelete.bind(this);
   }
   
   //TODO: create cache to avoid calling everytime
@@ -42,15 +45,37 @@ class Topping extends React.Component {
     })
   }
 
+  onToppingDelete(id) {
+    const { toppings } = this.state;
+
+    axios.delete(`https://pizza-admin-api.herokuapp.com/product/${id}`)
+      .then(res => {
+        this.setState({
+          toppings: toppings.filter(topping => topping.id !== id),
+        });
+      });
+  }
+
+  
   render() {
     const { toppings } = this.state;
 
     return (
       <div>
-        <ToppingsTable toppings={toppings} />
+        <Card title={(<H2>Toppings</H2>)}>
+          <ItemTable 
+            items={toppings} 
+            onItemDelete={this.onToppingDelete} 
+          />
+        </Card>
         <br />
         <br />
-        <AddNewTopping onNewToppingAdded={this.onNewToppingAdded} />
+        <Card title={(<H2>Add New Topping</H2>)}>
+          <AddNewItemForm  
+            type="toppings" 
+            onNewItemAdded={this.onNewToppingAdded}
+          />
+        </Card>
       </div>
     )
   }

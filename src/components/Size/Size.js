@@ -1,6 +1,8 @@
 import React from 'react';
-import AddNewSize from '../AddNewSize';
-import SizeTable from '../SizeTable';
+import axios from 'axios';
+import AddNewItemForm from '../AddNewItemForm/AddNewItemForm';
+import Card, { H2 } from '../Card';
+import ItemTable from '../ItemTable';
 
 class Size extends React.Component {
   constructor(props) {
@@ -11,6 +13,7 @@ class Size extends React.Component {
     };
 
     this.onNewSizeAdded = this.onNewSizeAdded.bind(this);
+    this.onSizeDelete = this.onSizeDelete.bind(this);
   }
   
   //TODO: create cache to avoid calling everytime
@@ -42,14 +45,35 @@ class Size extends React.Component {
     })
   }
 
+  onSizeDelete(id) {
+    const { sizes } = this.state;
+
+    axios.delete(`https://pizza-admin-api.herokuapp.com/product/${id}`)
+      .then(res => {
+        this.setState({
+          sizes: sizes.filter(size => size.id !== id),
+        });
+      });
+  }
+
   render() {
     const { sizes } = this.state;
     return (
       <div>
-        <SizeTable sizes={sizes} />
+        <Card title={(<H2>Size</H2>)}>
+          <ItemTable 
+            items={sizes} 
+            onItemDelete={this.onSizeDelete}
+           />
+        </Card>
         <br />
         <br />
-        <AddNewSize onNewSizeAdded={this.onNewSizeAdded} />
+        <Card title={(<H2>Add New Size</H2>)}>
+          <AddNewItemForm  
+            type="sizes" 
+            onNewItemAdded={this.onNewSizeAdded}
+          />
+        </Card>
       </div>
     )
   }

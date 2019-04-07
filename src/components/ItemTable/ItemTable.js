@@ -29,10 +29,10 @@ const TableTdImg = styled.img`
   height: 50px;
 `;
 
+ 
 class ItemTable extends React.Component {
   render() {
-    const { item } = this.props;
-
+    const { items, onItemDelete } = this.props;
     return (
           <Table>
             <thead>
@@ -44,19 +44,17 @@ class ItemTable extends React.Component {
               </tr>
             </thead>
             <tbody>
-              {item.map(({
-                id, name, price, image
-              }) => (
-                <tr key={ id }>
+              {items.map(item => (
+                <tr key={item.id}>
                   <Td>
-                    <TableTdImg src={ image } alt={ name } />
+                    <TableTdImg src={item.image} alt={item.name} />
                   </Td>
-                  <Td>{ name }</Td>
-                  <Td>$ { price }</Td>
+                  <Td>{item.name}</Td>
+                  <Td>$ {item.price}</Td>
                   <Td className="action">
                     <Button>Update</Button>
                     &nbsp;
-                    <Button color="danger">Delete</Button>
+                    <Button onClick={()=> onItemDelete(item.id)} color="danger">Delete</Button>
                   </Td>
                 </tr>
               ))}
