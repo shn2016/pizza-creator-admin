@@ -1,11 +1,20 @@
 # Pizza Ordering System
 
-This is the adminstration system for pizza creator.
+This is the adminstration system for pizza creator, and it a is subproject of [pizza-ordering-system](https://github.com/shn2016/pizza-ordering-system).
+
+## Demos
+
+Click these websites to go to the live demo of pizza creator project. They are all deployed on `github pages` and 'heroku'.
+
+* [Pizza Creator](https://shn2016.github.io/react-pizza-creator/)
+* [Pizza Admin System](https://shn2016.github.io/pizza-creator-admin/)
+* [Pizza Backend API](https://pizza-admin-api.herokuapp.com/explorer/): `Cold Load as I used free plan, might take a few seconds`
+
 
 ## Introduction
 
 This is the third part of [`Pizza Creator`](https://github.com/shn2016/pizza-ordering-system), it includes
-* [`Landing page`](landing-page/) for demonstration.
+* `Landing page` for demonstration.
 * `Pizza creator` implemented by 3 ways:
   * Imperative Programming 
   * Declarative Programming(React like)
