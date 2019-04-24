@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/index.js',
   mode:'development',
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'dist'),
     // to find the dist in the current path = ./dist
     filename: 'bundle.js'
   },
@@ -18,6 +18,8 @@ module.exports = {
   devServer: {
     historyApiFallback:true,
     disableHostCheck: true,
+    contentBase: './dist',
+    port: 8080
   },
   module: {
     rules: [
